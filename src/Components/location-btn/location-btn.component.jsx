@@ -4,9 +4,8 @@ import "./location-btn.styles.css";
 
 const LocationBtn = () => {
   return (
-    <div class="location-container">
-      <button class="location-button">
-        {" "}
+    <div className="location-container">
+      <button className="location-button">
         <i data-feather="map-pin"></i>
         <span>Change location</span>
       </button>

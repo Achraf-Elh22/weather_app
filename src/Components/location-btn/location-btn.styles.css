@@ -1,10 +1,11 @@
 .location-container {
   padding: 25px 35px;
+  margin-left: 10%;
 }
 
 .location-button {
   outline: none;
-  width: 100%;
+  width: 80%;
   box-sizing: border-box;
   border: none;
   border-radius: 25px;
@@ -15,9 +16,8 @@
   font-weight: 700;
   box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
   cursor: pointer;
-  transition: -webkit-transform 200ms ease;
   transition: transform 200ms ease;
-  transition: transform 200ms ease, -webkit-transform 200ms ease;
+  transition: transform 200ms ease;
 }
 
 .location-button:hover {

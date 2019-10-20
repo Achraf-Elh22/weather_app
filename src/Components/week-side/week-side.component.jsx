@@ -1,33 +1,20 @@
 import React from "react";
+import uuid from "react-uuid";
 
+import WeekList from "../week-list/week-list.component";
 import "./week-side.styles.css";
 
-const WeekSide = () => {
+const WeekSide = ({ daily }) => {
   return (
-    <div class="week-container">
-      <ul class="week-list">
-        <li class="active">
-          <i class="day-icon" data-feather="sun"></i>
-          <span class="day-name">Tue</span>
-          <span class="day-temp">29°C</span>
-        </li>
-        <li>
-          <i class="day-icon" data-feather="cloud"></i>
-          <span class="day-name">Wed</span>
-          <span class="day-temp">21°C</span>
-        </li>
-        <li>
-          <i class="day-icon" data-feather="cloud-snow"></i>
-          <span class="day-name">Thu</span>
-          <span class="day-temp">08°C</span>
-        </li>
-        <li>
-          <i class="day-icon" data-feather="cloud-rain"></i>
-          <span class="day-name">Fry</span>
-          <span class="day-temp">19°C</span>
-        </li>
-        <div class="clear"></div>
+    <div className="week-container">
+      <ul className="week-list">
+        {daily
+          .filter((el, idx) => idx < 5)
+          .map(day => (
+            <WeekList key={uuid()} time={day.time} temp={day.temperatureHigh} />
+          ))}
       </ul>
+      <div className="clear"></div>
     </div>
   );
 };
